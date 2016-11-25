@@ -14,9 +14,10 @@ namespace BloomFilters
             var hash = md5.ComputeHash(inputBytes);
 
             var sb = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
+
+            foreach (var b in hash)
             {
-                sb.Append(hash[i].ToString("x2"));
+                sb.Append(b.ToString("x2"));
             }
 
             return sb.ToString();
